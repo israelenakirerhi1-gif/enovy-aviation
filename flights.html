@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Results — ENOVY Air</title>
+<meta name="description" content="Browse available ENOVY Air flights matching your search.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <span class="mark">E</span>
+      <span class="name">ENOVY AIR<small>ENOVY GLOBAL LTD</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Book a Flight</a>
+      <a href="flights.html">Flights</a>
+      <a href="dashboard.html">My Bookings</a>
+    </nav>
+    <div class="nav-right" id="navRight"></div>
+  </div>
+</header>
+
+<section class="page-hero" style="padding:44px 0;">
+  <div class="wrap">
+    <div class="eyebrow">Search results</div>
+    <h1 id="resultsTitle" style="font-size:32px;">Available flights</h1>
+  </div>
+</section>
+<section style="padding-top:36px;">
+  <div class="wrap">
+    <div class="flight-list" id="resultsList"></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot-bottom">
+    <span>&copy; 2026 ENOVY GLOBAL LTD &middot; ENOVY Air &middot; CEO: Mr Ovie Enakirerhi</span>
+    <span>Warri, Delta State, Nigeria</span>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="assets/app.js"></script><script src="assets/page-flights.js"></script>
+<script src="assets/chatbot.js"></script>
+</body>
+</html>

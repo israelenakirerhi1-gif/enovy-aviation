@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: enovy-air
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+
+# NOTE on data persistence:
+# Render's FREE web services do not support persistent disks — the filesystem resets on every
+# redeploy, so data.json (your users/bookings/flights) resets too. That's fine for testing this
+# out live. When you're ready for real customers, either:
+#   1) Upgrade this service to a paid plan (Starter, $7/mo+) and add a "disk" block here, e.g.:
+#        disk:
+#          name: enovy-air-data
+#          mountPath: /var/data
+#          sizeGB: 1
+#      then set DATA_PATH=/var/data/data.json as an env var, or
+#   2) Migrate from the JSON file to Render's managed Postgres (a bigger change, but the right
+#      long-term move — see the README for more on this).

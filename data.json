@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ovie Enakirerhi",
+      "email": "admin@enovyglobal.com",
+      "passwordHash": "$2a$10$5Mp3gGDv6pqLMcoGMT9fEebVIrLcCnvoKhf6gXSgaSScv1SIS1F/C",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-08-24T11:13:25.893Z"
+    },
+    {
+      "id": 2,
+      "name": "Test Traveller",
+      "email": "traveller@example.com",
+      "passwordHash": "$2a$10$2iABRG1QLvw3E6Gi0SdxJOzeAhjDUgKSbykArR36misUIZPyUjsre",
+      "role": "user",
+      "status": "suspended",
+      "createdAt": "2026-08-24T11:13:25.893Z"
+    },
+    {
+      "id": 3,
+      "name": "israel Enakirerhi",
+      "email": "israelenakirerhi1@gmail.com",
+      "passwordHash": "$2a$10$KuOSXdtD.MxzTPzVAcCAJOGtZW5707GigjKgpDtZZauRdxrSRmQoO",
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-08-24T11:33:58.562Z"
+    },
+    {
+      "id": 4,
+      "name": "israel Enakirerhi",
+      "email": "israel@enovyglobal.com",
+      "passwordHash": "$2a$10$rFZe4oohCt2jaJ2AA9WK4uEYRTIoqig33K6CH28tTkdoHz0CN2HEm",
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-08-24T13:10:54.091Z"
+    }
+  ],
+  "flights": [
+    {
+      "id": 10,
+      "flightNo": "ENV-FIBIIF",
+      "airline": "ENOVY Air",
+      "origin": "Dubai",
+      "destination": "Lagos",
+      "departTime": "2026-11-01T12:00",
+      "arriveTime": "2026-11-03T21:00",
+      "price": 750000,
+      "seatsTotal": 9,
+      "seatsAvailable": 9
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "ref": "ENV-U4UK1E",
+      "userId": 1,
+      "flightId": 1,
+      "passengerName": "Ovie Enakirerhi",
+      "passengerEmail": "admin@enovyglobal.com",
+      "seats": 1,
+      "totalPrice": 85000,
+      "status": "cancelled",
+      "createdAt": "2026-08-24T11:30:57.800Z"
+    },
+    {
+      "id": 2,
+      "ref": "ENV-XUC507",
+      "userId": 3,
+      "flightId": 1,
+      "passengerName": "israel Enakirerhi",
+      "passengerEmail": "israelenakirerhi1@gmail.com",
+      "seats": 1,
+      "totalPrice": 85000,
+      "status": "cancelled",
+      "createdAt": "2026-08-24T11:48:51.159Z"
+    },
+    {
+      "id": 3,
+      "ref": "ENV-6U69UV",
+      "userId": 3,
+      "flightId": 6,
+      "passengerName": "israel Enakirerhi",
+      "passengerEmail": "israelenakirerhi1@gmail.com",
+      "seats": 38,
+      "totalPrice": 26220000,
+      "status": "cancelled",
+      "createdAt": "2026-08-24T12:42:05.269Z"
+    },
+    {
+      "id": 4,
+      "ref": "ENV-FIBIIF",
+      "userId": 4,
+      "flightId": 2,
+      "passengerName": "israel Enakirerhi",
+      "passengerEmail": "israel@enovyglobal.com",
+      "seats": 1,
+      "totalPrice": 62000,
+      "status": "cancelled",
+      "createdAt": "2026-08-24T19:20:37.232Z"
+    }
+  ],
+  "supportTickets": [],
+  "nextIds": {
+    "user": 5,
+    "flight": 11,
+    "booking": 5,
+    "ticket": 1
+  }
+}

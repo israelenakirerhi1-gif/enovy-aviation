@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — ENOVY GLOBAL LTD</title>
+<meta name="description" content="Owner-only administration panel for ENOVY Air.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <span class="mark">E</span>
+      <span class="name">ENOVY AIR<small>ENOVY GLOBAL LTD</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Book a Flight</a>
+      <a href="flights.html">Flights</a>
+      <a href="dashboard.html">My Bookings</a>
+    </nav>
+    <div class="nav-right" id="navRight"></div>
+  </div>
+</header>
+
+<div id="gate"></div>
+<div class="dash-shell" id="dashShell" style="display:none;">
+  <aside class="dash-side">
+    <div class="who"><b id="whoName">-</b><span>Administrator</span></div>
+    <nav class="dash-nav">
+      <button class="tab-link active" data-tab="overview">Overview</button>
+      <button class="tab-link" data-tab="users">Users</button>
+      <button class="tab-link" data-tab="bookings">Bookings</button>
+      <button class="tab-link" data-tab="flights">Flights</button>
+      <button class="tab-link" data-tab="support">Support Tickets</button>
+      <a href="index.html">&larr; View Site</a>
+      <button onclick="logout()">Log Out</button>
+    </nav>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-head"><h1 id="tabTitle">Overview</h1></div>
+
+    <div class="tab-panel active" id="panel-overview">
+      <div class="stat-row" id="statRow"></div>
+      <div class="empty-state">This is your owner-only control panel. Only accounts with the <b>admin</b> role (set directly in the database) can view this page &mdash; regular sign-ups can never reach it.</div>
+    </div>
+
+    <div class="tab-panel" id="panel-users">
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th><th>Action</th></tr></thead>
+        <tbody id="usersBody"></tbody>
+      </table></div>
+    </div>
+
+    <div class="tab-panel" id="panel-bookings">
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>Ref</th><th>Customer</th><th>Flight</th><th>Seats</th><th>Total</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="bookingsBody"></tbody>
+      </table></div>
+    </div>
+
+    <div class="tab-panel" id="panel-flights">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+        <button class="btn btn-primary btn-sm" onclick="openFlightForm()">+ Add Flight</button>
+      </div>
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>Flight</th><th>Route</th><th>Depart</th><th>Price</th><th>Seats</th><th>Action</th></tr></thead>
+        <tbody id="flightsBody"></tbody>
+      </table></div>
+    </div>
+    <div class="tab-panel" id="panel-support">
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>From</th><th>Email</th><th>Message</th><th>Received</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="supportBody"></tbody>
+      </table></div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="flightModal" style="position:fixed;inset:0;background:rgba(11,30,51,.6);display:none;align-items:center;justify-content:center;z-index:950;padding:20px;">
+  <div style="background:#fff;border-radius:6px;max-width:480px;width:100%;padding:30px;">
+    <h3 style="font-family:var(--body);font-weight:700;font-size:19px;margin-bottom:18px;">Add Flight</h3>
+    <form id="flightForm">
+      <div class="field-row" style="margin-bottom:12px;">
+        <div class="field"><label>Flight No.</label><input type="text" id="fFlightNo" required></div>
+        <div class="field"><label>Airline</label><input type="text" id="fAirline" value="ENOVY Air"></div>
+      </div>
+      <div class="field-row" style="margin-bottom:12px;">
+        <div class="field"><label>Origin</label><input type="text" id="fOrigin" required placeholder="Lagos (LOS)"></div>
+        <div class="field"><label>Destination</label><input type="text" id="fDestination" required placeholder="Abuja (ABV)"></div>
+      </div>
+      <div class="field-row" style="margin-bottom:12px;">
+        <div class="field"><label>Departs</label><input type="datetime-local" id="fDepart" required></div>
+        <div class="field"><label>Arrives</label><input type="datetime-local" id="fArrive"></div>
+      </div>
+      <div class="field-row" style="margin-bottom:20px;">
+        <div class="field"><label>Price (NGN)</label><input type="number" id="fPrice" required></div>
+        <div class="field"><label>Total Seats</label><input type="number" id="fSeats" required></div>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button type="button" class="btn btn-ghost btn-block" onclick="closeFlightForm()">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-block">Save Flight</button>
+      </div>
+    </form>
+  </div>
+</div>
+<footer>
+  <div class="wrap foot-bottom">
+    <span>&copy; 2026 ENOVY GLOBAL LTD &middot; ENOVY Air &middot; CEO: Mr Ovie Enakirerhi</span>
+    <span>Warri, Delta State, Nigeria</span>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="assets/app.js"></script><script src="assets/page-admin.js"></script>
+<script src="assets/chatbot.js"></script>
+</body>
+</html>

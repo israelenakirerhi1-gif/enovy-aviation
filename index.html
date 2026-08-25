@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENOVY Air — Book Flights | ENOVY GLOBAL LTD</title>
+<meta name="description" content="Book flights with ENOVY Air. Search routes, book seats, and manage your bookings online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <span class="mark">E</span>
+      <span class="name">ENOVY AIR<small>ENOVY GLOBAL LTD</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Book a Flight</a>
+      <a href="flights.html">Flights</a>
+      <a href="dashboard.html">My Bookings</a>
+    </nav>
+    <div class="nav-right" id="navRight"></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">ENOVY Air</div>
+    <h1>Book flights across Nigeria and beyond.</h1>
+    <p>Search live routes, pick your seats, and manage every booking from your own dashboard.</p>
+
+    <div class="search-card">
+      <form id="searchForm">
+        <div class="search-grid">
+          <div class="field">
+            <label>From</label>
+            <input type="text" id="sOrigin" placeholder="e.g. Lagos">
+          </div>
+          <div class="field">
+            <label>To</label>
+            <input type="text" id="sDestination" placeholder="e.g. Abuja">
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <input type="date" id="sDate">
+          </div>
+          <div class="field">
+            <label>Passengers</label>
+            <input type="number" id="sPax" min="1" value="1">
+          </div>
+          <button class="btn btn-primary" type="submit">Search Flights</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Popular routes</div>
+      <h2>Where ENOVY Air flies.</h2>
+      <p>A sample of routes running this week &mdash; search above for live pricing and seat availability.</p>
+    </div>
+    <div class="flight-list" id="popularFlights"></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot-bottom">
+    <span>&copy; 2026 ENOVY GLOBAL LTD &middot; ENOVY Air &middot; CEO: Mr Ovie Enakirerhi</span>
+    <span>Warri, Delta State, Nigeria</span>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="assets/app.js"></script><script src="assets/page-index.js"></script>
+<script src="assets/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "enovy-air",
+  "version": "1.0.0",
+  "description": "ENOVY GLOBAL LTD flight booking platform with user accounts and an owner-only admin dashboard.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "seed:reset": "node server/reset-data.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

@@ -3,6 +3,7 @@ const { readDB } = require('../db');
 
 const router = express.Router();
 
+// GET /api/flights?origin=&destination=&date=
 router.get('/', (req, res) => {
   const { origin, destination, date } = req.query;
 
@@ -29,8 +30,9 @@ router.get('/', (req, res) => {
 
   flights = flights
     .slice()
-    .sort((a, b) =>
-      new Date(a.departTime) - new Date(b.departTime)
+    .sort(
+      (a, b) =>
+        new Date(a.departTime) - new Date(b.departTime)
     );
 
   res.json({ flights });

@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, '..')));
 // =========================
 
 const authRoutes = require('./routes/auth');
-const flightsRoutes = require('./routes/flights');
+const flightsRoutes = require('server/routes/flights');
 const bookingsRoutes = require('./routes/bookings');
 const adminRoutes = require('./routes/admin');
 

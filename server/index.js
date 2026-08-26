@@ -1,4 +1,3 @@
-// ENOVY Air server
 const express = require('express');
 const path = require('path');
 
@@ -22,10 +21,10 @@ app.use(express.static(path.join(__dirname, '..')));
 // API ROUTES
 // =========================
 
-const authRoutes = require('../auth');
-const flightsRoutes = require('../flights');
-const bookingsRoutes = require('../bookings');
-const adminRoutes = require('../admin');
+const authRoutes = require('./routes/auth');
+const flightsRoutes = require('./routes/flights');
+const bookingsRoutes = require('./routes/bookings');
+const adminRoutes = require('./routes/admin');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/flights', flightsRoutes);

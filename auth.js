@@ -1,6 +1,8 @@
+const express = require('express');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
-const SECRET = process.env.JWT_SECRET || 'development-secret-change-this';
+const { readDB, writeDB } = require('../db');
+const { SECRET, authenticateToken } = require('../auth');const SECRET = process.env.JWT_SECRET || 'development-secret-change-this';
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers.authorization;
